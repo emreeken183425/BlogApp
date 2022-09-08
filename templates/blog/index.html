@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row mt-5 pt-3">
-    <div class="col-md-4 my-3 shadow">
+    <div class="col-md-4">
         <div class="card">
             <div class="card-body">
                 <h3>form</h3>
@@ -13,60 +13,7 @@
     </div>
     
     <div class="col-md-8">
-        <div class="card shadow my-3-2">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="" alt="img">
-                    </div>
-                    <div class="col-md-8">
-                       <small>20th june 2022</small>
-                       <hr>
-                       <a class='h3' href=""> first Post</a>
-                       <p class="text-justify my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, incidunt.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="col-md-8">
-        <div class="card shadow my-3-2">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="" alt="img">
-                    </div>
-                    <div class="col-md-8">
-                       <small>20th june 2022</small>
-                       <hr>
-                       <a class='h3' href=""> first Post</a>
-                       <p class="text-justify my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, incidunt.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="col-md-8">
-        <div class="card shadow my-3-2">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="" alt="img">
-                    </div>
-                    <div class="col-md-8">
-                       <small>20th june 2022</small>
-                       <hr>
-                       <a class='h3' href=""> first Post</a>
-                       <p class="text-justify my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, incidunt.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="col-md-8">
+        {% for post in posts  %}
         <div class="card shadow my-3">
             <div class="card-body">
                 <div class="row">
@@ -74,16 +21,20 @@
                         <img src="" alt="img">
                     </div>
                     <div class="col-md-8">
-                       <small>20th june 2022</small>
+                       <small> {{post.date_created}}  </small>
                        <hr>
-                       <a class='h3' href=""> first Post</a>
-                       <p class="text-justify my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, incidunt.</p>
+                       <a class='h3' href=""> {{post.title}} </a>
+                       <p class="text-justify my-3" >{{post.content}} </p>
                     </div>
                 </div>
             </div>
+       {% endfor %}
         </div>
 
     </div>
+    
+    
+    
   </div>
 </div>
    
