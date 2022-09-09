@@ -5,14 +5,16 @@
 
 <div class="container">
   <div class="row mt-5 pt-3">
-    <div class="col-md-5">
+    <div class="col-md-5 offset-md-7 ">
         <div class="card">
             <div class="card-body">
+                <h4>Sign Up Page</h4>
+                <hr>
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p}}
                     
-                    <input class="btn btn-primary btn-md " type="submit" value="post">
+                    <input class="btn btn-primary btn-block " type="submit" value="Sign Up">
                 
                 </form>
             </div>
