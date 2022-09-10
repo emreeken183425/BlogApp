@@ -14,9 +14,17 @@
                     {% csrf_token %}
                     {{ form.as_p}}
                     
-                    <input class="btn btn-primary btn-block " type="submit" value="Login">
+                    <div class="text-center" >
+                        <input class="btn btn-primary btn-lg " type="submit" value="Login">
+                    </div>
                 
                 </form>
+                <div class="text-center my-3 " >
+                    <a href="">Forget Password</a>
+                </div>
+               <div class="text-center" > 
+                <a class="btn btn-success"  href="{% url 'users-sign-up' %} ">Create account</a>
+               </div>
             </div>
         </div>
     </div>
