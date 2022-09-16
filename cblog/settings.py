@@ -158,4 +158,5 @@ LOGIN_URL = "login"
 # EMAIL_HOST_USER = config("EMAIL_USER")
 # EMAIL_HOST_PASSWORD = config("EMAIL_PASSWORD")
 STATICFILES_STORAGE ="whitenoise.storage.CompressedManifestStaticFilesStorage"
+import django_heroku
 django_heroku.settings(locals())
