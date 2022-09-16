@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
 from decouple import config
 
@@ -128,8 +129,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL='/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, ‘staticfiles’)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 MEDIA_ROOT = BASE_DIR / "media_root"
 MEDIA_URL = '/media/'
 #STATIC_ROOT = os.path.join(BASE_DIR, ‘staticfiles’)
@@ -159,6 +162,8 @@ LOGIN_URL = "login"
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = config("EMAIL_USER")
 # EMAIL_HOST_PASSWORD = config("EMAIL_PASSWORD")
-STATICFILES_STORAGE ="whitenoise.storage.CompressedManifestStaticFilesStorage"
-import django_heroku
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
 django_heroku.settings(locals())
