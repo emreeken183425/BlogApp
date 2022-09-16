@@ -1,13 +1,21 @@
-from django import forms 
-from .models import PostModel
+from django import forms
+from .models import Post, Comment, Category
 
-class PostModelForm(forms.ModelForm):
-    content=forms.CharField(widget=forms.Textarea(attrs={'row':4} ))
+class PostForm(forms.ModelForm):
+    status = forms.ChoiceField(choices=Post.OPTIONS)
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select")
     class Meta:
-        model = PostModel
-        fields = ("title","content")
+        model = Post
+        fields = (
+            'title',
+            'content',
+            'image',
+            'category',
+            'status',
+        )
         
-class PostUpdateForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):
     class Meta:
-        model=PostModel
-        fields=('title','content')
+        model = Comment
+        fields = ('content',)
+        
